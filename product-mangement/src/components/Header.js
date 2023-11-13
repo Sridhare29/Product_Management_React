@@ -1,12 +1,13 @@
 import React from 'react';
 import { Container, Nav, Navbar, Image, FormControl, Placeholder, DropdownButton, Dropdown, Badge } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <Navbar bg='light' variant='light' style={{ height: 80, boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)' }}>
             <Container>
-            <a href='/' style={{ display: 'flex', alignItems: 'center' }}>
+            <Link to='/' style={{ display: 'flex', alignItems: 'center' }}>
             <Image
               src='https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png'
               alt='Logo'
@@ -15,7 +16,7 @@ const Header = () => {
               className='mr-2' 
             />
             <span className='logo-text'>Apple</span>
-          </a>
+          </Link>
                 <Navbar.Brand>
 
                     <Navbar.Text className='search'>
@@ -24,7 +25,7 @@ const Header = () => {
                 </Navbar.Brand>
                 <Nav>
                     <Dropdown alignRight>
-                    <Dropdown.Toggle variant='success' >
+                    <Dropdown.Toggle variant='Black' >
                             <FaShoppingCart color = "Black" fontSize= "25px"/>
                             <Badge >{10}</Badge>
 
