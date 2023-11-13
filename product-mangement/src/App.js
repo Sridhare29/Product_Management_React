@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
-import Cart from './components/Cart';
+import ProductDetails from './components/ProductDetails';
 
 function App() {
   return (
@@ -10,8 +10,9 @@ function App() {
     <div>
     <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path='/' exact element={<Home />} />
+        <Route path='/product'exact element={<ProductDetails />} />
+        <Route>404 NOT FOUND!</Route>
       </Routes>
       </div>
     </BrowserRouter>
