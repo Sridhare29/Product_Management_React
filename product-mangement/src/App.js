@@ -11,7 +11,7 @@ function App() {
     <Header />
       <Routes>
         <Route path='/' exact element={<Home />} />
-        <Route path='/product'exact element={<ProductDetails />} />
+        <Route path='/product/:productId'exact element={<ProductDetails />} />
         <Route>404 NOT FOUND!</Route>
       </Routes>
       </div>

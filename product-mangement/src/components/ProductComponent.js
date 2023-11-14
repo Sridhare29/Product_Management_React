@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function ProductComponent() {
   const products = useSelector((state) => state.allproducts.products);
@@ -9,21 +10,22 @@ function ProductComponent() {
 
     return (
       <div className='col-md-3 mb-4' key={id}>
-        <div className='card'>
-          <div className='image'>
-            <img
-              src={productImageUrl}
-              alt={name}
-              style={{ width: '100%', height: '200px', objectFit: 'cover' }}
-            />
-          </div>
-          <div className='content' style={{ padding: '1rem' }}>
-            <div className='header'>{name}</div>
-            <div className='meta price'>Rs: {price}</div>
-            <div className='meta'><b>{category.name}</b></div>
-            <button className='btn btn-primary mt-2'>Buy</button>
+        <Link to={`/product/${id}`}>
+        <div className='card h-100'>
+          <img
+            src={productImageUrl}
+            alt={name}
+            className='card-img-top'
+            style={{ objectFit: 'cover', height: '200px' }}
+          />
+          <div className='card-body'>
+            <h5 className='card-title'>{name}</h5>
+            <p className='card-text'>Rs: {price}</p>
+            <p className='card-text'><b>{category.name}</b></p>
+            {/* <button className='btn btn-primary'>Buy</button> */}
           </div>
         </div>
+        </Link>
       </div>
     );
   });
