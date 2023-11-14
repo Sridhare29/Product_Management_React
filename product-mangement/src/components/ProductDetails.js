@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { seletedProducts } from '../redux/actions/productActions';
+import { removeSeletedProducts, seletedProducts } from '../redux/actions/productActions';
 
 function ProductDetails() {
   const product = useSelector((state) => state.product);
@@ -20,10 +20,12 @@ function ProductDetails() {
   };
 
   useEffect(() => {
-    if (productId && productId !== '') {
+    if (productId && productId !== '')
       fetchProductDetails();
+    return () => {
+      dispatch(removeSeletedProducts());
     }
-  }, [productId, dispatch]);
+  }, [productId]);
 
   return (
     <div className="container mt-5">
@@ -44,7 +46,7 @@ function ProductDetails() {
               <div className="card-body">
                 <h1 className="card-title">{name}</h1>
                 <h6>
-                  <span >MRP {price}<br/>(Incl. of all taxes)</span>
+                  <span >MRP ₹{price}<br/>(Incl. of all taxes)</span>
                 </h6>
                 <h3 className="card-text">
                   <small className="text-muted">{category}</small>

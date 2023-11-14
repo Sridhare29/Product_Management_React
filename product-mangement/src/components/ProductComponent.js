@@ -16,13 +16,13 @@ function ProductComponent() {
             src={productImageUrl}
             alt={name}
             className='card-img-top'
-            style={{ objectFit: 'cover', height: '200px' }}
+            style={{ objectFit: 'cover', height: '200px',padding: '10px' }}
           />
           <div className='card-body'>
             <h5 className='card-title'>{name}</h5>
-            <p className='card-text'>Rs: {price}</p>
+            <p className='card-text'>{description}</p>
+            <h6 className='card-text'>₹{price}</h6>
             <p className='card-text'><b>{category.name}</b></p>
-            {/* <button className='btn btn-primary'>Buy</button> */}
           </div>
         </div>
         </Link>
