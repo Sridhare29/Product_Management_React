@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import ProductDetails from './components/ProductDetails';
+import ProductAdd from './components/ProductAdd';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path='/' exact element={<Home />} />
         <Route path='/product/:productId'exact element={<ProductDetails />} />
+        <Route path='/create'exact element={<ProductAdd />} />
         <Route>404 NOT FOUND!</Route>
       </Routes>
       </div>
