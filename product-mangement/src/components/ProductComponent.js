@@ -20,9 +20,9 @@ function ProductComponent() {
           />
           <div className='card-body'>
             <h5 className='card-title'>{name}</h5>
-            <p className='card-text'>{description}</p>
+            <p className='card-text text-secondary'>{description}</p>
             <h6 className='card-text'>₹{price}</h6>
-            <p className='card-text'><b>{category.name}</b></p>
+            <p className='card-text text-secondary'><b>{category.name}</b></p>
           </div>
         </div>
         </Link>
